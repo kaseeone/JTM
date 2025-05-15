@@ -51,16 +51,24 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
     font-size: 1.3rem;
     font-weight: bold;
     color: var(--primary-color);
     text-decoration: none;
     transition: var(--transition-standard);
-    z-index: 1002;
+    z-index: 1001;
 }
 
-.logo:hover {
+.logo a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    transition: var(--transition-standard);
+}
+
+.logo a:hover {
+    color: var(--primary-dark);
     transform: translateY(-1px);
 }
 
@@ -849,8 +857,8 @@ footer p {
         background: var(--bg-dark);
     }
 
-    .logo span {
-        display: none;
+    .logo a {
+        font-size: 1rem;
     }
 
     .mobile-menu-btn {
