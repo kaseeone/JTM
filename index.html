@@ -19,23 +19,25 @@
 </head>
 <body>
     <header>
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="logo">
-                <span>JTM SHIFT & CLEAN LIMITED</span>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="JTM Shift Clean Logo">
+                <span>JTM Shift Clean</span>
+            </a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#home" aria-label="Go to home section">Home</a></li>
-                    <li><a href="#services" aria-label="Go to services section">Services</a></li>
-                    <li><a href="#about" aria-label="Go to about section">About</a></li>
-                    <li><a href="#contact" aria-label="Go to contact section">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
+            <div class="menu-overlay"></div>
         </nav>
     </header>
     <main>
@@ -223,33 +225,29 @@
     <script src="js/hero-animation.js" defer></script>
     <script src="js/contact-animation.js" defer></script>
     <script>
-        // Mobile menu functionality
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        menuBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            this.setAttribute('aria-expanded', 
-                this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false'
-            );
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const menuOverlay = document.querySelector('.menu-overlay');
+            const body = document.body;
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.navbar') && navMenu.classList.contains('active')) {
-                menuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-                menuBtn.setAttribute('aria-expanded', 'false');
+            function toggleMenu() {
+                mobileMenuBtn.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+                body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
             }
-        });
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuBtn.classList.remove('active');
-                navMenu.classList.remove('active');
-                menuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            menuOverlay.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navMenu.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
             });
         });
     </script>

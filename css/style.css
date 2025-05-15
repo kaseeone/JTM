@@ -876,35 +876,29 @@ footer p {
         top: 0;
         right: -300px;
         width: 280px;
-        height: auto;
-        min-height: 100vh;
+        height: 100%;
         background: var(--bg-dark);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
-        transition: var(--transition-standard);
+        transition: transform 0.3s ease;
         z-index: 999;
-        opacity: 0;
-        visibility: hidden;
+        transform: translateX(0);
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
         border-left: 1px solid rgba(255, 255, 255, 0.1);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
-        right: 0;
-        opacity: 1;
-        visibility: visible;
+        transform: translateX(-300px);
     }
 
     .nav-links {
-        position: relative;
-        top: 80px;
-        left: 0;
-        transform: none;
+        padding-top: 80px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
         gap: 0.5rem;
-        width: 100%;
-        padding: 1rem;
     }
 
     .nav-links a {
@@ -932,9 +926,8 @@ footer p {
         z-index: 1001;
     }
 
-    /* Add overlay when menu is active */
-    .nav-menu::before {
-        content: '';
+    /* Menu overlay */
+    .menu-overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -944,10 +937,10 @@ footer p {
         opacity: 0;
         visibility: hidden;
         transition: var(--transition-standard);
-        z-index: -1;
+        z-index: 998;
     }
 
-    .nav-menu.active::before {
+    .menu-overlay.active {
         opacity: 1;
         visibility: visible;
     }
