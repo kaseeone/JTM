@@ -45,6 +45,7 @@ header {
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
+    background: var(--bg-dark);
 }
 
 .logo {
@@ -845,6 +846,7 @@ footer p {
 @media (max-width: 800px) {
     .navbar {
         padding: 0.6rem 1rem;
+        background: var(--bg-dark);
     }
 
     .logo span {
@@ -853,6 +855,7 @@ footer p {
 
     .mobile-menu-btn {
         display: block;
+        z-index: 1001;
     }
 
     .mobile-menu-btn.active span:nth-child(1) {
@@ -874,15 +877,19 @@ footer p {
         right: -100%;
         width: 100%;
         height: 100vh;
-        background: rgba(10, 10, 10, 0.98);
+        background: var(--bg-dark);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         transition: var(--transition-standard);
-        z-index: 1001;
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
     }
 
     .nav-menu.active {
         right: 0;
+        opacity: 1;
+        visibility: visible;
     }
 
     .nav-links {
@@ -903,6 +910,7 @@ footer p {
         width: 100%;
         text-align: center;
         display: block;
+        color: var(--text-primary);
     }
 
     .nav-links a:hover {
