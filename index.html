@@ -16,12 +16,26 @@
     <!-- Preload hero images -->
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1920&q=80">
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1920&q=80">
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="images/JTM Logo - Black.png" fetchpriority="high">
+    <link rel="preload" as="image" href="images/hero/hero-1.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="images/services/residential-moving.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="images/services/commercial-moving.jpg" fetchpriority="high">
+    
+    <!-- Add loading="eager" to above-the-fold images -->
+    <style>
+        .hero-slide.active {
+            background-image: url('images/hero/hero-1.jpg');
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar" role="navigation" aria-label="Main navigation">
             <div class="logo">
-                <a href="#home" aria-label="Go to home">JTM SHIFT & CLEAN LIMITED</a>
+                <a href="#home" aria-label="Go to home">
+                    <img src="images/JTM Logo - Black.png" alt="JTM Shift & Clean Limited Logo" style="height:48px; width:auto; display:block;" />
+                </a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
@@ -75,23 +89,66 @@
             <div class="service-list">
                 <div class="service-item">
                     <img src="images/services/residential-moving.jpg" alt="Residential Moving Service" loading="lazy">
-                    <h3>Residential Moving</h3>
-                    <p>Swift and safe relocation of your household items, ensuring a stress-free move. We handle packing, loading, transport, and setup at your new home.</p>
+                    <div class="service-item-content">
+                        <h3>Residential Moving</h3>
+                        <p>Swift and safe relocation of your household items, ensuring a stress-free move. We handle packing, loading, transport, and setup at your new home.</p>
+                    </div>
                 </div>
                 <div class="service-item">
                     <img src="images/services/commercial-moving.jpg" alt="Office & Commercial Moving Service" loading="lazy">
-                    <h3>Office & Commercial Moving</h3>
-                    <p>Efficient office and business relocations with minimal downtime. We move everything from files to furniture, so you can get back to business fast.</p>
+                    <div class="service-item-content">
+                        <h3>Office & Commercial Moving</h3>
+                        <p>Efficient office and business relocations with minimal downtime. We move everything from files to furniture, so you can get back to business fast.</p>
+                    </div>
                 </div>
                 <div class="service-item">
                     <img src="images/services/professional-cleaning.jpg" alt="Professional Cleaning Service" loading="lazy">
-                    <h3>Professional Cleaning</h3>
-                    <p>Comprehensive cleaning services for homes, offices, and post-move situations. We use eco-friendly products for a spotless, healthy environment.</p>
+                    <div class="service-item-content">
+                        <h3>Professional Cleaning</h3>
+                        <p>Comprehensive cleaning services for homes, offices, and post-move situations. We use eco-friendly products for a spotless, healthy environment.</p>
+                    </div>
                 </div>
                 <div class="service-item">
                     <img src="images/services/packing-unpacking.jpg" alt="Packing & Unpacking Service" loading="lazy">
-                    <h3>Packing & Unpacking</h3>
-                    <p>Expert packing and unpacking to keep your belongings safe and organized. We provide all materials and handle fragile items with care.</p>
+                    <div class="service-item-content">
+                        <h3>Packing & Unpacking</h3>
+                        <p>Expert packing and unpacking to keep your belongings safe and organized. We provide all materials and handle fragile items with care.</p>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/Furniture Assembly and Disassembly.jfif" alt="Furniture Assembly and Disassembly Service" loading="lazy">
+                    <h3>Furniture Assembly and Disassembly</h3>
+                    <p>Professional assembly and disassembly of furniture for safe transport.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/Safe and Secure Transportation.jfif" alt="Safe and Secure Transportation Service" loading="lazy">
+                    <h3>Safe and Secure Transportation</h3>
+                    <p>Ensuring your items are transported safely and securely.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/Post-construction Cleaning.jfif" alt="Post-construction Cleaning Service" loading="lazy">
+                    <h3>Post-construction Cleaning</h3>
+                    <p>Thorough cleaning after construction or renovation projects.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/End-of-tenancy Cleaning.jfif" alt="End-of-tenancy Cleaning Service" loading="lazy">
+                    <h3>End-of-tenancy Cleaning</h3>
+                    <p>Comprehensive cleaning for end-of-lease or tenancy situations.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/Commercial and Office Cleaning.jfif" alt="Commercial and Office Cleaning Service" loading="lazy">
+                    <h3>Commercial and Office Cleaning</h3>
+                    <p>Professional cleaning for commercial spaces and offices.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/Deep Cleaning and Sanitization.jfif" alt="Deep Cleaning and Sanitization Service" loading="lazy">
+                    <h3>Deep Cleaning and Sanitization</h3>
+                    <p>Intensive cleaning and sanitization for a healthy environment.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/Carpet and Upholstery Cleaning.jfif" alt="Carpet and Upholstery Cleaning Service" loading="lazy">
+                    <h3>Carpet and Upholstery Cleaning</h3>
+                    <p>Specialized cleaning for carpets and upholstery.</p>
                 </div>
             </div>
         </section>
@@ -105,6 +162,24 @@
                     <h2>About Us</h2>
                     <p>JTM SHIFT & CLEAN LIMITED is dedicated to providing top-notch moving and cleaning services across Kenya. While our head office is based in Westlands, Nairobi, we operate nationwide, bringing our commitment to reliability, professionalism, and customer satisfaction to every corner of the country. Whether you need to move your home or office, or require thorough cleaning, our experienced team is here to help.</p>
                     <p>Our mission is to make your move or cleaning experience seamless, stress-free, and affordable throughout Kenya. We use modern equipment, eco-friendly cleaning products, and a highly trained team to deliver exceptional results every time.</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Expert Staff</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -113,7 +188,7 @@
             <h2>Why Choose Us</h2>
             <div class="why-list">
                 <div class="why-item">
-                    <img src="images/why-choose/professional-team.jfif" alt="Professional Team" loading="lazy">
+                    <img src="images/why-choose/professional-team.jfif" alt="Professional Team" loading="lazy" decoding="async">
                     <h3>Professional Team</h3>
                     <p>Our staff are trained, vetted, and dedicated to providing the best service possible.</p>
                 </div>
@@ -165,7 +240,7 @@
             <h2>What Our Clients Say</h2>
             <div class="testimonial-list">
                 <div class="testimonial-item">
-                    <img src="images/testimonials/testimonial-1.jfif" alt="Mary K." loading="lazy">
+                    <img src="images/testimonials/testimonial-1.jfif" alt="Mary K." loading="lazy" decoding="async">
                     <blockquote>"JTM made my move so easy and stress-free! The team was professional and careful with all my belongings."</blockquote>
                     <cite>- Mary K., Mombasa</cite>
                 </div>
